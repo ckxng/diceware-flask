@@ -1,12 +1,20 @@
 import os
-from flask import Flask
+import json
+from flask import Flask, jsonify
+from . passphrase import generate
 
-def create_app():
-    app = Flask(__name__)
-    app.config.from_mapping(
-        DEFAULT_WORDS = int(os.environ.get('DEFAULT_WORDS') or 6)
-    )
-    if app.debug:
-        print("DEFAULT_WORDS =",app.config.get("DEFAULT_WORDS"))
+app = Flask(__name__)
+app.config.from_mapping(
+    DEFAULT_WORDS = int(os.environ.get('DEFAULT_WORDS') or 6)
+)
+if app.debug:
+    print("DEFAULT_WORDS =",app.config.get("DEFAULT_WORDS"))
 
-    return app
+@app.route('/')
+def passphrase():
+    return jsonify({
+        'passphrase': generate(app.config.get('DEFAULT_WORDS'))
+    })
+
+if __name__ == "__main__":
+    app.run()
