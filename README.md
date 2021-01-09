@@ -1,6 +1,13 @@
 # diceware-flask
 
-## Environment
+## Development
+Run the following commands to setup your Python environment.
+
+    python -m venv venv
+    pip install -r requirements.txt
+    cp default.env .env
+
+## Environment File
 Set environment variables in `.env`
 
     FLASK_APP=diceware
