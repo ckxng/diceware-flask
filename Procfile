@@ -1,1 +1,1 @@
-web: gunicorn diceware:diceware
+web: gunicorn diceware:app
