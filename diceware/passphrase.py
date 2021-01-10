@@ -1,5 +1,11 @@
+import random
+from . wordlist import wordlist
+
 def get_word():
-    return 'word'
+    rolls = 0
+    for i in range(5):
+        rolls += random.randint(1,6)*(10**i)
+    return wordlist[rolls]
 
 def generate(words=6):
     passphrase = []
