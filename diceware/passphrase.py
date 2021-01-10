@@ -7,8 +7,8 @@ def get_word():
         rolls += random.randint(1,6)*(10**i)
     return wordlist[rolls]
 
-def generate(words=6):
+def generate(words=6, sep='-'):
     passphrase = []
     for i in range(words):
         passphrase.append(get_word())
-    return '-'.join(passphrase)
+    return sep.join(passphrase)
