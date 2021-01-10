@@ -10,7 +10,7 @@ app.config.from_mapping(
 if app.debug:
     print("DEFAULT_WORDS =",app.config.get("DEFAULT_WORDS"))
 
-@app.route('/')
+@app.route('/api/v1/passphrase')
 def passphrase():
     return jsonify({
         'passphrase': generate(app.config.get('DEFAULT_WORDS'))
