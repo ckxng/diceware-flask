@@ -19,3 +19,7 @@ Set the Flask environment variables.  FLASK_APP is required.
     DEFAULT_WORDS=8
 
 Set the number of words to be included in passphrases by default.
+
+    DEFAULT_SEPERATOR=-
+
+Set the string to be used to separate words in the passphrase.
